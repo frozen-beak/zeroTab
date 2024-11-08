@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/Dm-Sans-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: "HackNF Regular";
+  src: url("../fonts/HackNerdFont-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+:root {
+  /* Typefaces */
+  --dm-sans: "DM Sans", sans-serif;
+  --hack-nf: "HackNF Regular", monospace;
+
+  /* Colors (Default to DarkTheme) */
+  --c-bg: #212529;
+  --c-onBg: rgba(33, 37, 41, 0.16);
+  --c-primary: #f8f9fa;
+  --c-secondary: #dee2e6;
+  --c-tertiary: #adb5bd;
+  --c-accent: #42a0fd;
+}
+
+/* Fonts */
+
+.heading-2 {
+  font-family: var(--dm-sans);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.heading-3 {
+  font-family: var(--dm-sans);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.title-1 {
+  font-family: var(--hack-nf);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.title-2 {
+  font-family: var(--hack-nf);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.title-3 {
+  font-family: var(--hack-nf);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.body-1 {
+  font-family: var(--dm-sans);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.body-2 {
+  font-family: var(--dm-sans);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.body-3 {
+  font-family: var(--dm-sans);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* Spaces */
+
+.space-w-1 {
+  width: 8px;
+}
+
+.space-w-2 {
+  width: 12px;
+}
+
+.space-w-3 {
+  width: 16px;
+}
+
+.space-w-4 {
+  width: 20px;
+}
+
+.space-w-5 {
+  width: 24px;
+}
+
+.space-h-1 {
+  height: 8px;
+}
+
+.space-h-2 {
+  height: 12px;
+}
+
+.space-h-3 {
+  height: 16px;
+}
+
+.space-h-4 {
+  height: 20px;
+}
+
+.space-h-5 {
+  height: 24px;
+}
+
+/* Border Radius */
+
+.radius-1 {
+  border-radius: 4px;
+}
+
+.radius-2 {
+  border-radius: 8px;
+}
+
+.radius-3 {
+  border-radius: 16px;
+}
+
+.radius-4 {
+  border-radius: 24px;
+}
+
+/* Icons */
+
+.icon {
+  font-family: var(--hack-nf);
+  font-size: 20px;
+  width: 18px;
+  height: 20px;
+  color: var(--c-primary);
+}
+
+.icon-sec {
+  font-family: var(--hack-nf);
+  font-size: 16px;
+  width: 14px;
+  height: 18px;
+  color: var(--c-primary);
+}

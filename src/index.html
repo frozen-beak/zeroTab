@@ -4,29 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zero Tab</title>
+    <link rel="stylesheet" href="global.css" />
     <style>
-      :root {
-        --primary: #212529;
-        --on-bg: rgba(33, 37, 41, 0.16);
-        --text1: #ced4da;
-        --text2: #dee2e6;
-
-        --dm-sans: "DM Sans", sans-serif;
-        --hack-nf: "HackNF Regular", monospace;
-      }
-
-      @font-face {
-        font-family: "DM Sans";
-        src: url("../fonts/Dm-Sans-Variable.ttf") format("truetype");
-        font-weight: 100 900;
-      }
-
-      @font-face {
-        font-family: "HackNF Regular";
-        src: url("../fonts/HackNerdFont-Regular.ttf") format("truetype");
-        font-weight: 400;
-      }
-
       body {
         font-family: var(--dm-sans);
         margin: 0;
@@ -53,7 +32,8 @@
         width: 40px;
         height: 40px;
         border-radius: 8px;
-        background-color: var(--on-bg);
+        background-color: var(--c-onBg);
+        text-decoration: none;
 
         display: flex;
         flex-flow: row nowrap;
@@ -75,7 +55,9 @@
       }
 
       .status-bar {
-        background-color: var(--on-bg);
+        background-color: var(--c-onBg);
+        color: var(--c-primary);
+
         position: absolute;
         bottom: 0px;
         left: 0px;
@@ -85,13 +67,6 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-      }
-
-      .status-bar p {
-        font-family: var(--hack-nf);
-        color: var(--text1);
-        font-size: 14px;
-        font-weight: 400;
       }
 
       body .main {
@@ -106,34 +81,31 @@
       }
 
       body .main .holder {
-        width: 36%;
-        height: 48px;
-        background-color: var(--on-bg);
+        background-color: var(--c-onBg);
+
         border-radius: 24px;
 
+        width: 36%;
+        height: 48px;
         padding: 12px 12px;
       }
 
       .holder .inner-holder {
         width: 100%;
         height: 100%;
-        background-color: var(--primary);
-        border-radius: 12px;
+        background-color: var(--c-bg);
+        border-radius: 16px;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        padding: 0px 16px;
+        padding: 0px 20px;
       }
 
       .inner-holder input {
         width: 100%;
         background-color: transparent;
         border: 0px;
-        color: var(--text2);
-        font-family: var(--dm-sans);
-        font-size: 14px;
-        height: 20px;
-        font-weight: 300;
+        color: var(--c-primary);
       }
 
       .inner-holder input:focus {
@@ -141,8 +113,8 @@
       }
 
       .inner-holder input::placeholder {
-        font-size: 14px;
-        height: 20px;
+        color: var(--c-tertiary);
+        font-size: 15px;
         font-weight: 300;
       }
     </style>
@@ -176,43 +148,37 @@
         </div>
 
         <!-- Settings -->
-        <div class="icon-div">
-          <img
-            src="../assets/icons/dark/settings.png"
-            alt="Settings"
-            width="24px"
-            height="24px"
-          />
-        </div>
+        <a href="./settings/settings.html" class="icon-div">
+          <p class="icon">&#xeb52;</p>
+        </a>
       </div>
 
       <!-- Input -->
       <div class="holder">
         <div class="inner-holder">
-          <img
-            src="../assets/icons/dark/search.png"
-            alt="Search"
-            width="24px"
-            height="24px"
+          <p class="icon-sec">&#xf4b5;</p>
+          <div class="space-w-2"></div>
+          <input
+            class="body-1"
+            type="text"
+            placeholder="Type a command or search"
           />
-          <div style="width: 12px"></div>
-          <input type="text" placeholder="Type a command or search" />
         </div>
       </div>
 
       <!-- Status Bar -->
       <div class="status-bar">
-        <div style="width: 16px"></div>
-        <p> &nbsp;61%</p>
+        <div class="space-w-4"></div>
+        <p class="title-3">&#xf241; &nbsp;0%</p>
         <div style="width: 24px"></div>
-        <p>󰍛 48% (7/15GB)</p>
+        <p class="title-3">󰍛 0% (0/0GB)</p>
         <div style="flex-grow: 1"></div>
-        <p> Tue</p>
+        <p class="title-3">&#xf4df; Mon</p>
         <div style="width: 24px"></div>
-        <p>󰁥 Nov 07</p>
+        <p class="title-3">󰁥 Jan 01</p>
         <div style="width: 24px"></div>
-        <p>󰔟 20:30 PM</p>
-        <div style="width: 16px"></div>
+        <p class="title-3">󰔟 00:00 AM</p>
+        <div class="space-w-4"></div>
       </div>
     </div>
   </body>

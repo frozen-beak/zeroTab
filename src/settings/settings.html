@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zero Tab</title>
+    <style>
+      :root {
+        --primary: #212529;
+        --on-bg: rgba(33, 37, 41, 0.16);
+        --text1: #f8f9fa;
+        --text2: #dee2e6;
+
+        --dm-sans: "DM Sans", sans-serif;
+        --hack-nf: "HackNF Regular", monospace;
+      }
+
+      @font-face {
+        font-family: "DM Sans";
+        src: url("../fonts/Dm-Sans-Variable.ttf") format("truetype");
+        font-weight: 100 900;
+      }
+
+      @font-face {
+        font-family: "HackNF Regular";
+        src: url("../fonts/HackNerdFont-Regular.ttf") format("truetype");
+        font-weight: 400;
+      }
+
+      /* Reusable */
+      .flex-row {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+      }
+
+      body {
+        font-family: var(--dm-sans);
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+      }
+
+      .wallpaper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      .wallpaper-blur {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      .icon-div {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background-color: var(--on-bg);
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .header {
+        position: absolute;
+        top: 32px;
+        left: 32px;
+        z-index: 10;
+        width: calc(100% - 64px);
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .status-bar {
+        background-color: var(--on-bg);
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        z-index: 10;
+        width: 100%;
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+      }
+
+      .status-bar p {
+        font-family: var(--hack-nf);
+        color: var(--text1);
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      body .main {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: start;
+      }
+
+      body .main .holder {
+        width: 60%;
+        border-radius: 16px;
+        padding: 12px 12px;
+        margin: 120px 0px;
+
+        background-color: var(--primary);
+        color: var(--text1);
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+      }
+
+      .main .holder h2 {
+        font-size: 24;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Background -->
+    <img
+      class="wallpaper"
+      src="../../assets/wallpapers/dark_01.png"
+      alt="dark_01"
+    />
+    <img
+      class="wallpaper-blur"
+      src="../../assets/default_blur.png"
+      alt="default_blur"
+    />
+
+    <!-- Main -->
+    <div class="main">
+      <!-- Header -->
+      <div class="header">
+        <!-- Logo -->
+        <div class="icon-div">
+          <img
+            src="../../assets/logo.png"
+            alt="ZeroTab"
+            width="24px"
+            height="24px"
+          />
+        </div>
+      </div>
+
+      <!-- Input -->
+      <main class="holder">
+        <!-- Heading -->
+        <div class="flex-row">
+          <div class="icon-div">
+            <img
+              src="../../assets/icons/dark/back.png"
+              alt="ZeroTab"
+              width="24px"
+              height="24px"
+            />
+          </div>
+          <h2>Settings</h2>
+        </div>
+
+        <!-- Search Engine -->
+        <h4>Default Search Engine</h4>
+        <p>
+          This is your default search engine in the search bar. You can switch
+          it any time
+        </p>
+      </main>
+    </div>
+  </body>
+</html>
