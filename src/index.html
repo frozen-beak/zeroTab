@@ -3,57 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zero Tab</title>
+    <title>ZeroTab</title>
     <link rel="stylesheet" href="global.css" />
     <style>
-      body {
-        font-family: var(--dm-sans);
-        margin: 0;
-        width: 100vw;
-        height: 100vh;
-        position: relative;
-      }
-
-      .wallpaper {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-      }
-
-      .wallpaper-blur {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-      }
-
-      .icon-div {
-        width: 40px;
-        height: 40px;
-        border-radius: 8px;
-        background-color: var(--c-onBg);
-        text-decoration: none;
-
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .header {
-        position: absolute;
-        top: 32px;
-        left: 32px;
-        z-index: 10;
-        width: calc(100% - 64px);
-
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-      }
-
       .status-bar {
         background-color: var(--c-onBg);
         color: var(--c-primary);
@@ -62,22 +14,13 @@
         bottom: 0px;
         left: 0px;
         z-index: 10;
-        width: 100%;
+        width: calc(100% - 48px);
+
+        padding: 16px 24px;
 
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-      }
-
-      body .main {
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        z-index: 10;
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        justify-content: center;
       }
 
       body .main .holder {
@@ -168,7 +111,6 @@
 
       <!-- Status Bar -->
       <div class="status-bar">
-        <div class="space-w-4"></div>
         <p class="title-3">&#xf241; &nbsp;0%</p>
         <div style="width: 24px"></div>
         <p class="title-3">󰍛 0% (0/0GB)</p>
@@ -178,7 +120,6 @@
         <p class="title-3">󰁥 Jan 01</p>
         <div style="width: 24px"></div>
         <p class="title-3">󰔟 00:00 AM</p>
-        <div class="space-w-4"></div>
       </div>
     </div>
   </body>
