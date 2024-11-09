@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Zero Tab",
+    "name": "ZeroTab",
     "version": "1.0",
     "description": "A keyboard-friendly, command-driven search bar",
     "chrome_url_overrides": {
@@ -14,5 +14,10 @@
     "options_page": "src/settings/settings.html",
     "content_security_policy": {
         "extension_pages": "script-src 'self'; object-src 'self'"
+    },
+    "icons": {
+        "16": "assets/icon16.png",
+        "48": "assets/icon48.png",
+        "128": "assets/icon128.png"
     }
 }

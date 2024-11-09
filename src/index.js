@@ -1,12 +1,23 @@
 import { searchEngines } from "./global.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  focusSearchTab();
   listenToSearchTab();
   searchListener();
+
+  updateSysInfoAtInterval();
+  listenToKeyBindings();
 });
 
 var currentSearchEngine = undefined;
+
+function listenToKeyBindings() {
+  document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey && event.key === "k") {
+      event.preventDefault();
+      focusSearchTab();
+    }
+  });
+}
 
 function loadDefaultSearchEngine() {
   return new Promise((resolve, reject) => {
@@ -90,11 +101,80 @@ async function searchListener(input) {
       await loadDefaultSearchEngine();
     }
 
-    const url = currentSearchEngine.url.replace(
-      "%s",
-      encodeURIComponent(search.value)
-    );
+    if (isValidURL(search.value)) {
+      const url = "https://" + search.value;
+      window.open(url, "_self");
+    } else {
+      const url = currentSearchEngine.url.replace(
+        "%s",
+        encodeURIComponent(search.value)
+      );
 
-    window.open(url, "_self");
+      window.open(url, "_self");
+    }
+
+    currentSearchEngine = undefined;
   });
+}
+
+function isValidURL(str) {
+  const regex = /^(https?:\/\/)?[^\s/$.?#].[^\s]*$/i;
+  return regex.test(str);
+}
+
+function updateSysInfoAtInterval() {
+  updateTime();
+  updateDate();
+  updateDay();
+
+  setInterval(() => {
+    updateTime();
+  }, 1000);
+}
+
+function updateTime() {
+  const element = document.getElementById("time");
+  const now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let amPm = hours >= 12 ? "PM" : "AM";
+
+  // Convert 24-hour time to 12-hour format
+  hours = hours % 12;
+  hours = hours ? hours : 12; // 12 AM is 12, not 0
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+
+  element.innerHTML = `󰔟 ${hours}:${minutes} ${amPm}`;
+}
+
+function updateDay() {
+  const element = document.getElementById("day");
+  const now = new Date();
+  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const day = daysOfWeek[now.getDay()];
+
+  element.innerHTML = `&#xf4df; ${day}`;
+}
+
+function updateDate() {
+  const element = document.getElementById("date");
+  const now = new Date();
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const month = months[now.getMonth()];
+  const day = now.getDate();
+
+  element.innerHTML = `󰁥 ${month} ${day < 10 ? "0" + day : day}`;
 }

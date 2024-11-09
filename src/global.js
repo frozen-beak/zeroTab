@@ -30,7 +30,7 @@ export const searchEngines = [
     shortcut: "e",
   },
   {
-    url: "https://en.wikipedia.org/wiki/search?q=%s",
+    url: "https://en.wikipedia.org/wiki/Special:Search?search=%s",
     icon: "https://www.wikipedia.org/favicon.ico",
     name: "Wikipedia",
     shortcut: "w",
