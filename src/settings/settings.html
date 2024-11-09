@@ -5,77 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings - ZeroTab</title>
     <link rel="stylesheet" href="../global.css" />
-    <style>
-      /* Reusable */
-      .flex-row {
-        width: 100%;
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: start;
-        justify-content: start;
-      }
-
-      .flex-col {
-        width: 100%;
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: start;
-        justify-content: start;
-      }
-
-      body .main .holder {
-        width: 60%;
-        height: 100%;
-        border-radius: 16px;
-        padding: 32px 32px;
-        margin: 120px 0px;
-
-        background-color: var(--c-bg);
-        color: var(--c-primary);
-
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: start;
-        justify-content: start;
-      }
-
-      .default-search {
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-
-        border-radius: 8px;
-        padding: 8px 8px;
-        background-color: var(--c-secBg);
-        border: 0px;
-        color: var(--c-primary);
-      }
-
-      .add-btn {
-        border-radius: 8px;
-        padding: 8px 12px;
-        background-color: var(--c-secBg);
-        color: var(--c-primary);
-
-        text-decoration: none;
-      }
-
-      .search-table {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto;
-      }
-
-      .search-divider {
-        width: 100%;
-        border: 0px;
-        height: 1.25px;
-        background-color: var(--c-secBg);
-        grid-column: span 3;
-        margin: 20px 0px;
-      }
-    </style>
+    <script type="module" src="./settings.js"></script>
+    <link rel="stylesheet" href="settings.css" />
   </head>
 
   <body>
@@ -95,33 +26,49 @@
     <div class="main">
       <!-- Input -->
       <main class="holder">
-        <h2 class="heading-2">Settings</h2>
+        <div class="flex-row" style="align-items: center !important">
+          <a href="#" class="icon" style="text-decoration: none">&#xf053;</a>
+          <div class="space-w-2">&nbsp;</div>
+          <h2 class="heading-2">Settings</h2>
+        </div>
 
-        <div class="space-h-6"></div>
+        <div class="space-h-6">&nbsp;</div>
+        <div class="space-h-2">&nbsp;</div>
 
-        <!-- Search Engine -->
-        <h4 class="heading-3">Default Search Engine</h4>
-        <div class="space-h-1"></div>
-        <p class="body-3">
-          This is your default search engine in the search bar. You can switch
-          it any time
-        </p>
+        <!-- Default Search Engine -->
 
-        <div class="space-h-3"></div>
+        <div class="flex-row">
+          <div class="flex-col">
+            <h4 class="heading-3">Default Search Engine</h4>
+            <div class="space-h-1">&nbsp;</div>
+            <p class="body-3">
+              This is your default search engine in the search bar. You can
+              switch it any time
+            </p>
+          </div>
 
-        <select
-          class="default-search title-3"
-          id="default-search"
-          name="options"
-        >
-          <option value="option1">DuckDuckGo</option>
-          <option value="option2">Perplexity</option>
-          <option value="option3">Google</option>
-        </select>
+          <a href="/" class="add-btn title-3">Change</a>
+        </div>
 
-        <div class="space-h-6"></div>
+        <div class="space-h-6">&nbsp;</div>
+        <div class="space-h-2">&nbsp;</div>
 
-        <!-- Search Engine -->
+        <div class="flex-row title-2" style="margin-left: 16px">
+          <img
+            src="https://www.perplexity.ai/favicon.ico"
+            alt="Perplexity"
+            width="20px"
+            height="20px"
+          />
+          <div class="space-w-2">&nbsp;</div>
+          <p>Perplexity</p>
+        </div>
+
+        <div class="space-h-6">&nbsp;</div>
+        <div class="space-h-2">&nbsp;</div>
+
+        <!-- Search Engine Options -->
+
         <div class="flex-row">
           <div class="flex-col">
             <h4 class="heading-3">Search Engines</h4>
@@ -135,23 +82,24 @@
           <a href="/" class="add-btn title-3">Add</a>
         </div>
 
-        <div class="space-h-6"></div>
-        <div class="space-h-2"></div>
+        <div class="space-h-6">&nbsp;</div>
+        <div class="space-h-2">&nbsp;</div>
 
-        <section class="search-table title-2">
-          <div class="flex-row" style="margin-left: 16px">
-            <img
-              src="https://www.perplexity.ai/favicon.ico"
-              alt="Perplexity"
-              width="20px"
-              height="20px"
-            />
-            <div class="space-w-2"></div>
-            <p>Perplexity</p>
-          </div>
-          <p style="text-align: center">:p</p>
-          <p style="text-align: end; margin-right: 16px">&#xf448;</p>
-          <hr class="search-divider" />
+        <section id="search-table" style="width: 100%">
+          <!-- <div class="search-table title-2">
+            <div class="flex-row" style="margin-left: 16px">
+              <img
+                src="https://www.perplexity.ai/favicon.ico"
+                alt="Perplexity"
+                width="20px"
+                height="20px"
+              />
+              <div class="space-w-2"></div>
+              <p>Perplexity</p>
+            </div>
+            <p style="text-align: end; margin-right: 16px">:p</p>
+          </div> -->
+          <!-- <hr class="search-divider" /> -->
         </section>
       </main>
     </div>

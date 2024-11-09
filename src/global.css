@@ -35,7 +35,7 @@
 
 .heading-3 {
   font-family: var(--dm-sans);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -221,4 +221,29 @@ body .main {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+}
+
+/* Scrollbar */
+
+/* The scrollbar's width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* The background of the scrollbar track */
+::-webkit-scrollbar-track {
+  background: var(--c-onBg);
+  /* border-radius: 2px; */
+}
+
+/* The handle (thumb) of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background: var(--c-secBg);
+  border-radius: 2px;
+}
+
+/* The thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-bg);
 }

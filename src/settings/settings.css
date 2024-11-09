@@ -1,0 +1,70 @@
+.flex-row {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: start;
+  justify-content: start;
+}
+
+.flex-col {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: start;
+}
+
+body .main .holder {
+  width: 60%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 16px;
+  padding: 32px 32px;
+  margin: 80px 0px;
+  scroll-behavior: smooth;
+
+  background-color: var(--c-bg);
+  color: var(--c-primary);
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: start;
+}
+
+.default-search {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  border-radius: 8px;
+  padding: 8px 8px;
+  background-color: var(--c-secBg);
+  border: 0px;
+  color: var(--c-primary);
+}
+
+.add-btn {
+  border-radius: 8px;
+  padding: 8px 12px;
+  background-color: var(--c-secBg);
+  color: var(--c-primary);
+
+  text-decoration: none;
+}
+
+.search-table {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+}
+
+.search-divider {
+  width: 100%;
+  border: 0px;
+  height: 1px;
+  background-color: var(--c-secBg);
+  margin: 20px 0px;
+}
