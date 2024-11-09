@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZeroTab</title>
     <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script type="module" src="./index.js"></script>
   </head>
 
   <body>
@@ -42,11 +44,18 @@
 
       <!-- Input -->
       <div class="holder">
-        <div class="inner-holder">
+        <form id="search-form" class="inner-holder">
           <p class="icon-secondary">&#xf4b5;</p>
           <div class="space-w-2"></div>
-          <input type="text" placeholder="Type a command or search" />
-        </div>
+          <p id="search-tag" class="body-1" style="color: var(--c-accent)"></p>
+          <input
+            style="flex-grow: 1"
+            id="search-input"
+            type="text"
+            placeholder="Type a command or search"
+            autocomplete="off"
+          />
+        </form>
       </div>
 
       <!-- Status Bar -->
@@ -62,77 +71,5 @@
         <p class="title-3">󰔟 00:00 AM</p>
       </div>
     </div>
-
-    <!-- Styles -->
-    <style>
-      .header {
-        position: absolute;
-        top: 32px;
-        left: 32px;
-        z-index: 10;
-        width: calc(100% - 64px);
-
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .status-bar {
-        background-color: var(--c-onBg);
-        color: var(--c-primary);
-
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        z-index: 10;
-        width: calc(100% - 48px);
-
-        padding: 16px 24px;
-
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-      }
-
-      .main .holder {
-        background-color: var(--c-onBg);
-
-        border-radius: 24px;
-
-        width: 36%;
-        height: 48px;
-        padding: 12px 12px;
-      }
-
-      .holder .inner-holder {
-        width: 100%;
-        height: 100%;
-        background-color: var(--c-bg);
-        border-radius: 16px;
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        padding: 0px 20px;
-      }
-
-      input {
-        width: 100%;
-        background-color: transparent;
-        border: 0px;
-        color: var(--c-primary);
-        font-size: 16px;
-        font-weight: 400;
-      }
-
-      input:focus {
-        outline: 0px;
-      }
-
-      input::placeholder {
-        color: var(--c-tertiary);
-        font-size: 15px;
-        font-weight: 300;
-      }
-    </style>
   </body>
 </html>

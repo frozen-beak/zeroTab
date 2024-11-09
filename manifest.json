@@ -10,9 +10,7 @@
         "storage",
         "bookmarks"
     ],
-    "background": {
-        "service_worker": "src/index.js"
-    },
+    "background": {},
     "options_page": "src/settings/settings.html",
     "content_security_policy": {
         "extension_pages": "script-src 'self'; object-src 'self'"

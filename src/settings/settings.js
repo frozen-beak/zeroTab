@@ -11,7 +11,8 @@ function getBackToNewTab() {
 
   anchor.addEventListener("click", function (event) {
     event.preventDefault();
-    chrome.tabs.create({ url: "chrome://newtab/" });
+    closeCurrentTab();
+    createNewTab();
   });
 }
 
@@ -91,4 +92,16 @@ function renderSearchEngines() {
       searchSection.appendChild(hr);
     }
   });
+}
+
+function closeCurrentTab() {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    if (tabs.length > 0) {
+      chrome.tabs.remove(tabs[0].id);
+    }
+  });
+}
+
+function createNewTab() {
+  chrome.tabs.create({ url: "chrome://newtab/" });
 }
