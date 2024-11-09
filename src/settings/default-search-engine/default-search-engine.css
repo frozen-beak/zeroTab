@@ -1,0 +1,31 @@
+body .main {
+  width: 100%;
+}
+
+body .main .holder {
+  width: 32%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 16px;
+  padding: 24px 24px;
+  scroll-behavior: smooth;
+
+  background-color: var(--c-bg);
+  color: var(--c-primary);
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: start;
+}
+
+.add-btn {
+  border-radius: 8px;
+  padding: 8px 16px;
+  background-color: var(--c-secBg);
+  color: var(--c-primary);
+
+  text-decoration: none;
+  box-shadow: none;
+  border: 0px;
+}

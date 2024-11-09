@@ -73,6 +73,7 @@
   font-family: var(--dm-sans);
   font-size: 14px;
   font-weight: 300;
+  line-height: 2ch;
 }
 
 /* Spaces */
@@ -149,15 +150,23 @@
   color: var(--c-primary);
 }
 
-.icon-sec {
+.icon-secondary {
   font-family: var(--hack-nf);
   font-size: 16px;
   width: 14px;
   height: 18px;
+  color: var(--c-secondary);
+}
+
+.icon-tertiary {
+  font-family: var(--hack-nf);
+  font-size: 14px;
+  width: 12px;
+  height: 16px;
   color: var(--c-primary);
 }
 
-/* Reusable */
+/* Core Styles */
 
 * {
   margin: 0px;
@@ -171,6 +180,8 @@ body {
   height: 100vh;
   position: relative;
 }
+
+/* Reusable components styles */
 
 body .main {
   position: absolute;
@@ -210,17 +221,20 @@ body .main {
   align-items: center;
 }
 
-.header {
-  position: absolute;
-  top: 32px;
-  left: 32px;
-  z-index: 10;
-  width: calc(100% - 64px);
-
+.flex-row {
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
+  align-items: start;
+  justify-content: start;
+}
+
+.flex-col {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: start;
 }
 
 /* Scrollbar */

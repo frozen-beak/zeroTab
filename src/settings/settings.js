@@ -1,8 +1,46 @@
 import { searchEngines } from "../global.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  initializeSelectedEngine();
   renderSearchEngines();
+  getBackToNewTab();
 });
+
+function getBackToNewTab() {
+  const anchor = document.getElementById("get-back");
+
+  anchor.addEventListener("click", function (event) {
+    event.preventDefault();
+    chrome.tabs.create({ url: "chrome://newtab/" });
+  });
+}
+
+function initializeSelectedEngine() {
+  chrome.storage.sync.get("searchEngine", (data) => {
+    const savedEngine = data.searchEngine;
+
+    if (savedEngine) {
+      // Find the engine in the searchEngines list
+      const engine = searchEngines.find((e) => e.name === savedEngine);
+
+      if (engine) {
+        // Update the default search engine div
+        const defaultSearchEngineDiv = document.getElementById(
+          "default-search-engine"
+        );
+
+        // Update image src and alt
+        const img = defaultSearchEngineDiv.querySelector("img");
+        img.src = engine.icon;
+        img.alt = engine.name;
+
+        // Update the search engine name
+        const nameElement = defaultSearchEngineDiv.querySelector("p");
+        nameElement.textContent = engine.name;
+      }
+    }
+  });
+}
 
 function renderSearchEngines() {
   const searchSection = document.getElementById("search-table");
